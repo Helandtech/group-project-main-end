@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<head>
+    <meta charset="UTF-8">
+    <title>Add new item</title>
+</head>
+<body>
+  <h1>Add new listing</h1>
+    <form th:action="@{/items/add}" th:method="post" th:object="${item}">
+        <label for="itemName">Listing title:</label><input type="text" id="itemName" th:field="*{name}"/>
+        <br>
+        <br>
+        <label for="itemPrice">Price:</label><input type="number" id="itemPrice" th:field="*{price}"/>
+        <br>
+        <br>
+        <input type="submit" value="submit">
+        <input type="button" value="Go back" onclick="location.href='/home'">
+    </form>
+</body>
+</html>
